@@ -1,0 +1,51 @@
+{
+  "name": "duniter-bma",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --growl --timeout 10000 test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:duniter/duniter-bma.git"
+  },
+  "keywords": [
+    "duniter",
+    "ucoin",
+    "openudc",
+    "libremoney",
+    "crypto-currency"
+  ],
+  "author": "Cedric Moreau <cem.moreau@gmail.com>",
+  "license": "AGPL-3.0",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/duniter/duniter-bma/issues"
+  },
+  "dependencies": {
+    "async": "2.1.4",
+    "body-parser": "1.15.2",
+    "co": "4.6.0",
+    "cors": "2.8.1",
+    "ddos": "0.1.16",
+    "errorhandler": "1.4.3",
+    "event-stream": "3.3.4",
+    "express": "4.14.0",
+    "express-cors": "0.0.3",
+    "express-fileupload": "0.0.5",
+    "inquirer": "2.0.0",
+    "morgan": "1.7.0",
+    "nnupnp": "1.0.2",
+    "q": "1.4.1",
+    "request": "2.75.0",
+    "request-promise": "4.1.1",
+    "underscore": "1.8.3",
+    "ws": "1.1.1"
+  },
+  "devDependencies": {
+    "duniter": "duniter/duniter#dev",
+    "duniter-keypair": "duniter/duniter-keypair#dev",
+    "mocha": "3.2.0",
+    "should": "11.1.2"
+  }
+}

@@ -105,6 +105,7 @@ module.exports = {
     },
 
     methods: {
+      noLimit: () => require('./lib/limiter').noLimit(),
       bma, sanitize, dtos,
       upnpConf: network.upnpConf,
       getRandomPort: network.getRandomPort,

@@ -33,7 +33,7 @@
     "express": "4.14.0",
     "express-cors": "0.0.3",
     "express-fileupload": "0.0.5",
-    "inquirer": "2.0.0",
+    "inquirer": "0.8.5",
     "morgan": "1.7.0",
     "nnupnp": "1.0.2",
     "q": "1.4.1",

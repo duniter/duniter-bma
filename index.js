@@ -141,6 +141,12 @@ function BMAPI(server, conf, logger) {
       try {
         upnpAPI = yield upnp(server.conf.port, server.conf.remoteport, logger);
         upnpAPI.startRegular();
+        const gateway = yield upnpAPI.findGateway();
+        if (gateway) {
+          if (bmapi.getDDOS().params.whitelist.indexOf(gateway) === -1) {
+            bmapi.getDDOS().params.whitelist.push(gateway);
+          }
+        }
       } catch (e) {
         logger.warn(e);
       }

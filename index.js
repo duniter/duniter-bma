@@ -128,7 +128,7 @@ function BMAPI(server, conf, logger) {
   stream.Transform.call(this, { objectMode: true });
 
   this.startService = () => co(function*() {
-    bmapi = yield bma(server, null, conf.httplogs, logger);
+    bmapi = yield bma(server, null, server.conf.httplogs, logger);
     yield bmapi.openConnections();
 
     /***************
@@ -137,9 +137,9 @@ function BMAPI(server, conf, logger) {
     if (upnpAPI) {
       upnpAPI.stopRegular();
     }
-    if (conf.upnp) {
+    if (server.conf.upnp) {
       try {
-        upnpAPI = yield upnp(conf.port, conf.remoteport, logger);
+        upnpAPI = yield upnp(server.conf.port, server.conf.remoteport, logger);
         upnpAPI.startRegular();
       } catch (e) {
         logger.warn(e);

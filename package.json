@@ -1,6 +1,6 @@
 {
   "name": "duniter-bma",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "index.js",
   "scripts": {
     "test": "mocha --growl --timeout 10000 test/"

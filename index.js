@@ -16,6 +16,8 @@ const network = require('./lib/network');
 const http2raw = require('./lib/http2raw');
 const inquirer = require('inquirer');
 
+let networkWizardDone = false;
+
 module.exports = {
   duniter: {
 
@@ -35,10 +37,14 @@ module.exports = {
 
       'network': (conf, program, logger) => co(function*() {
         yield Q.nbind(networkConfiguration, null, conf, logger)();
+        networkWizardDone = true;
       }),
 
       'network-reconfigure': (conf, program, logger) => co(function*() {
-        yield Q.nbind(networkReconfiguration, null, conf, logger, program.autoconf, program.noupnp)();
+        if (!networkWizardDone) {
+          // This step can only be launched lonely
+          yield Q.nbind(networkReconfiguration, null, conf, logger, program.autoconf, program.noupnp)();
+        }
       })
     },
 

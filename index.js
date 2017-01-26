@@ -60,12 +60,18 @@ module.exports = {
         if (program.remote6) conf.remoteipv6 = program.remote6;
         if (program.remotep) conf.remoteport = program.remotep;
 
-        // Default remote: same as local if defined
-        if (!conf.remoteipv4 && conf.ipv4) {
-          conf.remoteipv4 = conf.ipv4;
-        }
+        if (!conf.ipv4) delete conf.ipv4;
+        if (!conf.ipv6) delete conf.ipv6;
+        if (!conf.remoteipv4) delete conf.remoteipv4;
+        if (!conf.remoteipv6) delete conf.remoteipv6;
+
+        // Default remoteipv6: same as local if defined
         if (!conf.remoteipv6 && conf.ipv6) {
           conf.remoteipv6 = conf.ipv6;
+        }
+        // Fix #807: default remoteipv4: same as local ipv4 if no removeipv4 is not defined AND no DNS nor IPv6
+        if (conf.ipv4 && !(conf.remoteipv4 || conf.remotehost || conf.remoteipv6)) {
+          conf.remoteipv4 = conf.ipv4;
         }
         if (!conf.remoteport && conf.port) {
           conf.remoteport = conf.port;
@@ -103,6 +109,13 @@ module.exports = {
         if (!conf.remoteport) {
           throw new Error('No port for remote contact.');
         }
+      }),
+
+      beforeSave: (conf, program) => co(function*() {
+        if (!conf.ipv4) delete conf.ipv4;
+        if (!conf.ipv6) delete conf.ipv6;
+        if (!conf.remoteipv4) delete conf.remoteipv4;
+        if (!conf.remoteipv6) delete conf.remoteipv6;
       })
     },
 

@@ -43,6 +43,7 @@
     "ws": "1.1.1"
   },
   "devDependencies": {
+    "duniter": "^0.90.3",
     "mocha": "3.2.0",
     "should": "11.1.2"
   }

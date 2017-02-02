@@ -43,7 +43,7 @@ module.exports = {
       'network-reconfigure': (conf, program, logger) => co(function*() {
         if (!networkWizardDone) {
           // This step can only be launched lonely
-          yield Q.nbind(networkReconfiguration, null, conf, logger, program.autoconf, program.noupnp)();
+          yield Q.nbind(networkReconfiguration, null)(conf, program.autoconf, logger, program.noupnp);
         }
       })
     },

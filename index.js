@@ -52,13 +52,13 @@ module.exports = {
 
       onLoading: (conf, program, logger) => co(function*(){
 
-        if (program.port) conf.port = program.port;
-        if (program.ipv4) conf.ipv4 = program.ipv4;
-        if (program.ipv6) conf.ipv6 = program.ipv6;
-        if (program.remoteh) conf.remotehost = program.remoteh;
-        if (program.remote4) conf.remoteipv4 = program.remote4;
-        if (program.remote6) conf.remoteipv6 = program.remote6;
-        if (program.remotep) conf.remoteport = program.remotep;
+        if (program.port !== undefined) conf.port = program.port;
+        if (program.ipv4 !== undefined) conf.ipv4 = program.ipv4;
+        if (program.ipv6 !== undefined) conf.ipv6 = program.ipv6;
+        if (program.remoteh !== undefined) conf.remotehost = program.remoteh;
+        if (program.remote4 !== undefined) conf.remoteipv4 = program.remote4;
+        if (program.remote6 !== undefined) conf.remoteipv6 = program.remote6;
+        if (program.remotep !== undefined) conf.remoteport = program.remotep;
 
         if (!conf.ipv4) delete conf.ipv4;
         if (!conf.ipv6) delete conf.ipv6;

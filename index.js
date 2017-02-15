@@ -90,6 +90,21 @@ module.exports = {
         if (conf.upnp === undefined || conf.upnp === null) {
           conf.upnp = true; // Defaults to true
         }
+        if (!conf.dos) {
+          conf.dos = { whitelist: ['127.0.0.1'] };
+          conf.dos.maxcount = 50;
+          conf.dos.burst = 20;
+          conf.dos.limit = conf.dos.burst * 2;
+          conf.dos.maxexpiry = 120;
+          conf.dos.checkinterval = 1;
+          conf.dos.trustProxy = true;
+          conf.dos.includeUserAgent = true;
+          conf.dos.errormessage = 'Error';
+          conf.dos.testmode = false;
+          conf.dos.silent = false;
+          conf.dos.silentStart = false;
+          conf.dos.responseStatus = 429;
+        }
 
         // UPnP
         if (program.noupnp === true) {
@@ -116,6 +131,7 @@ module.exports = {
         if (!conf.ipv6) delete conf.ipv6;
         if (!conf.remoteipv4) delete conf.remoteipv4;
         if (!conf.remoteipv6) delete conf.remoteipv6;
+        conf.dos.whitelist = _.uniq(conf.dos.whitelist);
       })
     },
 

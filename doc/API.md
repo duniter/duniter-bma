@@ -870,7 +870,7 @@ The hardship value (`level`) + `block` number.
 
 **Goal**
 
-GET hardship level for given member's pubkey for writing next block.
+GET hardship level for all member's uid for writing next block.
 
 **Parameters**
 

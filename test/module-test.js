@@ -3,6 +3,7 @@ const assert = require('assert');
 const should = require('should');
 const co  = require('co');
 const duniterBMA = require('../index');
+const network = require('../lib/network');
 const duniterKeypair = require('duniter-keypair');
 const duniter = require('duniter');
 const logger = require('duniter/app/lib/logger')();
@@ -128,5 +129,10 @@ describe('Module usage', () => {
       '--ipv4', '127.0.0.1',
       '--port', '10400'
     ]);
+  }));
+
+  it('default IPv6 should not be a local one', () => co(function*() {
+    const ipv6 = network.getBestLocalIPv6();
+    ipv6.should.not.match(/fe80/);
   }));
 });

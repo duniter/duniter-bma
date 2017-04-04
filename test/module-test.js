@@ -133,6 +133,8 @@ describe('Module usage', () => {
 
   it('default IPv6 should not be a local one', () => co(function*() {
     const ipv6 = network.getBestLocalIPv6();
-    ipv6.should.not.match(/fe80/);
+    if (ipv6) {
+      ipv6.should.not.match(/fe80/);
+    }
   }));
 });

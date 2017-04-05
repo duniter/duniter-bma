@@ -40,7 +40,7 @@
     "request": "2.81.0",
     "request-promise": "4.2.0",
     "underscore": "1.8.3",
-    "ws": "2.2.2"
+    "ws": "1.1.1"
   },
   "devDependencies": {
     "duniter": "^0.90.3",

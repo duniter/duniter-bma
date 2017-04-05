@@ -337,7 +337,7 @@ function getLocalNetworkOperations(conf, autoconf) {
         message: "IPv4 interface",
         default: conf.ipv4,
         choices: interfaces
-      }], function (answers) {
+      }]).then((answers) => {
         conf.ipv4 = answers.ipv4;
         next();
       });
@@ -382,7 +382,7 @@ function getLocalNetworkOperations(conf, autoconf) {
         message: "IPv6 interface",
         default: conf.ipv6,
         choices: interfaces
-      }], function (answers) {
+      }]).then((answers) => {
         conf.ipv6 = conf.remoteipv6 = answers.ipv6;
         next();
       });
@@ -430,7 +430,7 @@ function getRemoteNetworkOperations(conf, remoteipv4) {
         validate: function (input) {
           return !!(input && input.toString().match(constants.IPV4_REGEXP));
         }
-      }], function (answers) {
+      }]).then((answers) => {
         if (answers.remoteipv4 == "new") {
           inquirer.prompt([{
             type: "input",
@@ -440,7 +440,7 @@ function getRemoteNetworkOperations(conf, remoteipv4) {
             validate: function (input) {
               return !!(input && input.toString().match(constants.IPV4_REGEXP));
             }
-          }], async.apply(next, null));
+          }]).then((answers) => next(null, answers));
         } else {
           next(null, answers);
         }
@@ -521,7 +521,7 @@ function choose (question, defaultValue, ifOK, ifNotOK) {
     name: "q",
     message: question,
     default: defaultValue
-  }], function (answer) {
+  }]).then((answer) => {
     answer.q ? ifOK() : ifNotOK();
   });
 }
@@ -533,7 +533,7 @@ function simpleValue (question, property, defaultValue, conf, validation, done) 
     message: question,
     default: conf[property],
     validate: validation
-  }], function (answers) {
+  }]).then((answers) => {
     conf[property] = answers[property];
     done();
   });

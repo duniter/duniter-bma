@@ -136,7 +136,10 @@ module.exports = {
     },
 
     service: {
-      input: (server, conf, logger) => new BMAPI(server, conf, logger)
+      input: (server, conf, logger) => {
+        server.getMainEndpoint = () => Promise.resolve(getEndpoint(conf))
+        return new BMAPI(server, conf, logger)
+      }
     },
 
     methods: {
@@ -145,6 +148,8 @@ module.exports = {
       upnpConf: network.upnpConf,
       getRandomPort: network.getRandomPort,
       listInterfaces: network.listInterfaces,
+      getEndpoint: getEndpoint,
+      getMainEndpoint: (conf) => Promise.resolve(getEndpoint(conf)),
       getBestLocalIPv6: network.getBestLocalIPv6,
       getBestLocalIPv4: network.getBestLocalIPv4,
       createServersAndListen: network.createServersAndListen,
@@ -198,7 +203,22 @@ function BMAPI(server, conf, logger) {
   });
 }
 
-
+function getEndpoint(theConf) {
+  let endpoint = 'BASIC_MERKLED_API';
+  if (theConf.remotehost) {
+    endpoint += ' ' + theConf.remotehost;
+  }
+  if (theConf.remoteipv4) {
+    endpoint += ' ' + theConf.remoteipv4;
+  }
+  if (theConf.remoteipv6) {
+    endpoint += ' ' + theConf.remoteipv6;
+  }
+  if (theConf.remoteport) {
+    endpoint += ' ' + theConf.remoteport;
+  }
+  return endpoint;
+}
 
 function networkReconfiguration(conf, autoconf, logger, noupnp, done) {
   async.waterfall([

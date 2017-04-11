@@ -8,6 +8,7 @@
 * [API](#api)
   * [node/](#node)
       * [summary](#nodesummary)
+      * [sandboxes](#sandboxes)
   * [wot/](#wot)
       * [add](#wotadd)
       * [certify](#wotcertify)
@@ -57,6 +58,9 @@
 Data is made accessible through an HTTP API mainly inspired from [OpenUDC_exchange_formats draft](https://github.com/Open-UDC/open-udc/blob/master/docs/OpenUDC_exchange_formats.draft.txt), and has been adapted to fit Duniter specificities.
 
     http[s]://Node[:port]/...
+    |-- node/
+    |   |-- summary
+    |   |-- sandboxes
     |-- wot/
     |   |-- add
     |   |-- certify
@@ -231,6 +235,35 @@ Technical informations about the node.
     "software": "duniter",
     "version": "0.10.3",
     "forkWindowSize": 10
+  }
+}
+```
+
+#### `node/sandboxes`
+**Goal**
+
+GET filling and capacity of indentities, membership and transactions sandboxes of the requested peer.
+
+**Parameters**
+
+*None*.
+
+**Returns**
+
+Technical informations about identities, membership and transactions sandboxes.
+```json
+{
+  "identities": {
+    "size": 5000,
+    "free": 4626
+  },
+  "memberships": {
+    "size": 5000,
+    "free": 4750
+  },
+  "transactions": {
+    "size": 200,
+    "free": 190
   }
 }
 ```

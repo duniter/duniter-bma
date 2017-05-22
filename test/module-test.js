@@ -16,7 +16,7 @@ const stack = duniter.statics.minimalStack();
 stack.registerDependency(duniterKeypair, 'duniter-keypair');
 stack.registerDependency(duniterBMA,     'duniter-bma');
 
-describe('Module usage', () => {
+describe.skip('Module usage', () => {
 
   it('/node/summary should answer', () => co(function*() {
     stack.registerDependency({

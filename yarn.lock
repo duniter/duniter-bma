@@ -88,6 +88,12 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+argparse@^1.0.7:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
+  dependencies:
+    sprintf-js "~1.0.2"
+
 array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
@@ -133,6 +139,10 @@ aws4@^1.2.1:
 balanced-match@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
+
+base-x@^2.0.1:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/base-x/-/base-x-2.0.5.tgz#11967f90b42995cfdb5f50a1be499d7675db4fce"
 
 basic-auth@~1.1.0:
   version "1.1.0"
@@ -214,6 +224,12 @@ brace-expansion@^1.1.7:
 browser-stdout@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.0.tgz#f351d32969d32fa5d7a5567154263d928ae3bd1f"
+
+bs58@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bs58/-/bs58-4.0.0.tgz#65f5deaf6d74e6135a99f763ca6209ab424b9172"
+  dependencies:
+    base-x "^2.0.1"
 
 buffer-crc32@^0.2.1:
   version "0.2.13"
@@ -426,17 +442,17 @@ debug@2.2.0, debug@~2.2.0:
   dependencies:
     ms "0.7.1"
 
-debug@2.6.1, debug@^2.2.0:
+debug@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.4:
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.4.tgz#7586a9b3c39741c0282ae33445c4e8ac74734fe0"
+debug@2.6.7, debug@^2.2.0:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
-    ms "0.7.3"
+    ms "2.0.0"
 
 deep-extend@~0.4.0:
   version "0.4.2"
@@ -469,18 +485,34 @@ diff@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-1.4.0.tgz#7f28d2eb9ee7b15a97efd89ce63dcfdaa3ccbabf"
 
-duniter-common@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/duniter-common/-/duniter-common-1.0.1.tgz#a768503c1ee2ceca89c5e5314692d79f64aeb949"
+duniter-common@^1.0.0, duniter-common@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/duniter-common/-/duniter-common-1.3.0.tgz#834f5d8f244a0b377146735795d2e5d0328b2cfd"
   dependencies:
     co "4.6.0"
+    jison "0.4.17"
     naclb "1.3.7"
     node-pre-gyp "0.6.32"
     tweetnacl "0.14.3"
+    underscore "1.8.3"
 
-duniter@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/duniter/-/duniter-1.2.3.tgz#dee5e761950537548a3507da0fa2fa489a695de3"
+duniter-keypair@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/duniter-keypair/-/duniter-keypair-1.3.0.tgz#fd63c2ffc1ced6ea68c31153fa893e6f3466ee94"
+  dependencies:
+    bs58 "4.0.0"
+    co "4.6.0"
+    inquirer "^3.0.6"
+    js-yaml "3.8.2"
+    node-pre-gyp "0.6.34"
+    q "1.5.0"
+    scryptb "6.0.4"
+    tweetnacl "0.14.5"
+    tweetnacl-util "0.15.0"
+
+duniter@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/duniter/-/duniter-1.2.4.tgz#091e624fdc0006b9da0e9a85ad3a4b4d8868ef0a"
   dependencies:
     archiver "1.3.0"
     async "2.2.0"
@@ -512,7 +544,7 @@ duniter@^1.2.0:
     unzip "0.1.11"
     unzip2 "0.2.5"
     winston "2.3.1"
-    wotb "0.5.3"
+    wotb "0.5.5"
 
 duplexer@~0.1.1:
   version "0.1.1"
@@ -570,6 +602,10 @@ escodegen@1.3.x:
 esprima@1.1.x, esprima@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.1.1.tgz#5b6f1547f4d102e670e140c509be6771d6aeb549"
+
+esprima@^3.1.1:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
 
 estraverse@~1.5.0:
   version "1.5.1"
@@ -665,10 +701,10 @@ figures@^2.0.0:
     escape-string-regexp "^1.0.5"
 
 finalhandler@~1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.0.2.tgz#d0e36f9dbc557f2de14423df6261889e9d60c93a"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.0.3.tgz#ef47e77950e999780e86022a560e3217e0d0cc89"
   dependencies:
-    debug "2.6.4"
+    debug "2.6.7"
     encodeurl "~1.0.1"
     escape-html "~1.0.3"
     on-finished "~2.3.0"
@@ -884,7 +920,7 @@ ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
-inquirer@3.0.6:
+inquirer@3.0.6, inquirer@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.0.6.tgz#e04aaa9d05b7a3cb9b0f407d04375f0447190347"
   dependencies:
@@ -965,6 +1001,13 @@ jodid25519@^1.0.0:
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
   dependencies:
     jsbn "~0.1.0"
+
+js-yaml@3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.8.2.tgz#02d3e2c0f6beab20248d412c352203827d786721"
+  dependencies:
+    argparse "^1.0.7"
+    esprima "^3.1.1"
 
 jsbn@~0.1.0:
   version "0.1.1"
@@ -1201,9 +1244,9 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
-ms@0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -1645,6 +1688,14 @@ sax@>=0.1.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
+scryptb@6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/scryptb/-/scryptb-6.0.4.tgz#593e03cab6295e21172b6e5870b5c76f0f89da83"
+  dependencies:
+    bindings "1.2.1"
+    nan "2.2.0"
+    node-pre-gyp "0.6.23"
+
 semver@^5.3.0, semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
@@ -1765,6 +1816,10 @@ split@0.3:
   dependencies:
     through "2"
 
+sprintf-js@~1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
+
 sqlite3@3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/sqlite3/-/sqlite3-3.1.4.tgz#b01176b8aebdfe9e09ce0b3faedbf305d8a64a25"
@@ -1833,10 +1888,10 @@ string_decoder@~0.10.x:
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
 string_decoder@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.0.tgz#f06f41157b664d86069f84bdbdc9b0d8ab281667"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.1.tgz#62e200f039955a6810d8df0a33ffc0f013662d98"
   dependencies:
-    buffer-shims "~1.0.0"
+    safe-buffer "^5.0.1"
 
 stringstream@~0.0.4:
   version "0.0.5"
@@ -1971,9 +2026,17 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tweetnacl@0.14.3, tweetnacl@^0.14.3, tweetnacl@~0.14.0:
+tweetnacl-util@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/tweetnacl-util/-/tweetnacl-util-0.15.0.tgz#4576c1cee5e2d63d207fee52f1ba02819480bc75"
+
+tweetnacl@0.14.3:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.3.tgz#3da382f670f25ded78d7b3d1792119bca0b7132d"
+
+tweetnacl@0.14.5, tweetnacl@^0.14.3, tweetnacl@~0.14.0:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 type-is@~1.6.14:
   version "1.6.15"
@@ -2083,9 +2146,9 @@ wordwrap@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
-wotb@0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/wotb/-/wotb-0.5.3.tgz#57e94271166bcbc6ce6f7cff83588c65cf07cf2b"
+wotb@0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/wotb/-/wotb-0.5.5.tgz#ebc802c860a92143c7705904c43d4b972944c7eb"
   dependencies:
     bindings "1.2.1"
     nan "2.2.0"

@@ -442,13 +442,13 @@ debug@2.2.0, debug@~2.2.0:
   dependencies:
     ms "0.7.1"
 
-debug@2.6.1:
+debug@2.6.1, debug@^2.2.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.7, debug@^2.2.0:
+debug@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
@@ -511,8 +511,8 @@ duniter-keypair@^1.3.0:
     tweetnacl-util "0.15.0"
 
 duniter@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/duniter/-/duniter-1.2.4.tgz#091e624fdc0006b9da0e9a85ad3a4b4d8868ef0a"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/duniter/-/duniter-1.2.5.tgz#5214be5cb60fe03b0e12719f021aa528f459c2cc"
   dependencies:
     archiver "1.3.0"
     async "2.2.0"
@@ -544,7 +544,7 @@ duniter@^1.2.4:
     unzip "0.1.11"
     unzip2 "0.2.5"
     winston "2.3.1"
-    wotb "0.5.5"
+    wotb "0.5.x"
 
 duplexer@~0.1.1:
   version "0.1.1"
@@ -681,8 +681,8 @@ extend@^3.0.0, extend@~3.0.0:
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
 external-editor@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-2.0.1.tgz#4c597c6c88fa6410e41dbbaa7b1be2336aa31095"
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-2.0.2.tgz#384f6d8ae02054235c19e0a142c6d6fc36ad9363"
   dependencies:
     tmp "^0.0.31"
 
@@ -2146,9 +2146,9 @@ wordwrap@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
-wotb@0.5.5:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/wotb/-/wotb-0.5.5.tgz#ebc802c860a92143c7705904c43d4b972944c7eb"
+wotb@0.5.x:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/wotb/-/wotb-0.5.7.tgz#24b3c8d931533bf77971deceb85cecd2518c8316"
   dependencies:
     bindings "1.2.1"
     nan "2.2.0"

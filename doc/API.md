@@ -673,7 +673,7 @@ The synchronization parameters.
 }
 ```
 
-Parameters meaning is described under [Protocol parameters](./Protocol.md#protocol-parameters).
+Parameters meaning is described under [Protocol parameters](https://github.com/duniter/duniter/blob/master/doc/Protocol.md#protocol-parameters).
 
 #### `blockchain/membership`
 
